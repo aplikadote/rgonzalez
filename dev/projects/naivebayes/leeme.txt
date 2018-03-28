@@ -1,0 +1,3 @@
+las noticias se encuentra en la carpeta "noticias"
+los ficheros de prueba se encuentra en "dataset"
+tambien se encuentra ahi un fichero .sql que contiene la base de datos

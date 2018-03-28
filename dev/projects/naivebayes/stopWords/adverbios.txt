@@ -1,0 +1,8 @@
+hora, ayer, anteayer, hoy, mañana, antes, anoche, aun, cuando, despues, entonces, jamas, luego, mientras, nunca, primero, siempre, tarde, todavia, ya
+aqui, alli, alla, aca, fuera, abajo, delante, adelante, alrededor, arriba, atras, cerca, debajo, donde, encima, enfrente, fuera, lejos
+algo, nada, apenas, bastante, casi, cuanto, demasiado, más, menos, mucho, poco, todo, solo, mitad, tan, tanto, etc
+asi, bien, mal, casi, como, despacio, rapido, lento, deprisa
+si, claro, exacto, efectivamente, ciertamente, seguramente, justo, ya
+no, nunca, tampoco
+quizas, probablemente
+ademas, embargo

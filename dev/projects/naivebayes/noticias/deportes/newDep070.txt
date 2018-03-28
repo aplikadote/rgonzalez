@@ -1,0 +1,16 @@
+ Básquetbol: Resultados de una nueva jornada de la NBA
+Resultados
+
+Charlotte Bobcats      111       Washington Wizards   TP 114
+Boston Celtics         105       Golden State Warriors    82
+Houston Rockets         94       Dallas Mavericks        100
+Miami Heat              79       Atlanta Hawks            82
+Nueva Orleans Hornets   93       Indiana Pacers          105
+Detroit Pistons         98       Nueva York Knicks        86
+Milwaukee Bucks        110       Los Angeles Lakers      103
+Minnesota Timberwolves  86       Cleveland Cavaliers      97
+Memphis Grizzlies       89       Toronto Raptors          95
+San Antonio Spurs      128       Orlando Magic           110
+Phoenix Suns           127       Sacramento Kings        111
+Portland Trail Blazers 101       New Jersey Nets         106
+Los Angeles Clippers   101       Denver Nuggets           90

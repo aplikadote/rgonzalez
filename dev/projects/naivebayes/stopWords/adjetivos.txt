@@ -1,0 +1,14 @@
+mio, mia, mios, mias
+tuyo, tuya, tuyos, tuyas
+suyo, suya, suyos, suyas
+nuestro, nuestra, nuestros, nuestras
+vuestro, vuestra, vuestros, vuestras
+suyo, suya, suyos, suyas
+mi, mis
+tu, tus
+su, sus
+este, ese, aquel
+esta, esa, aquella
+estos, esos, aquellos
+estas, esas, aquellas
+eso, esos
