@@ -1,0 +1,19 @@
+var fondos = ['A', 'B','C','D','E'];
+var fondosData = [];
+for(var i=0; i<5;i++){
+  var data = []
+  for(var j=5; j<12;j++){
+    var str = [];  
+    $('form table:nth-child(2) tr:nth-child('+j+') td').each(function(x,y){
+      str.push(y.innerText);
+    });
+    data.push(str); 
+  } 
+  fondosData.push({'fondo': fondos[i], 'data': data});
+}
+
+var year = $('select[name="aaaa"]').val();
+var month = $('select[name="mm"]').val();
+var fondosColumns = ['AFP','MENSUAL','ACUM_DESDE_ENERO','ACUM_ANHO_COMPLETO','PROMEDIO_HISTORICO'];
+var result = {'year': year, 'month': month, 'fondosColumns':fondosColumns, 'fondosData': fondosData};
+copy(result);
