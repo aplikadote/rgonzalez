@@ -28,14 +28,14 @@ public class ReadDatabase {
         TreeSet<Periodo> periodos = db.getPeriodos();
         Tipo[] tipos = Tipo.values();
 
+        Fondo fondo = Fondo.A;
         for (Periodo periodo : periodos) {
-            System.out.format("%s \n", periodo);
+            System.out.format("%s %s\n", periodo, fondo);
             for (Afp afp : afps) {
-                Double value = db.get(afp, Fondo.A, periodo, Tipo.MENSUAL);
-                System.out.format("%s %s %s\n", afp, Fondo.A, value);
+                Double value = db.get(afp, fondo, periodo, Tipo.RENTAB_MENSUAL);
+                System.out.format("  %s %s\n", afp.getName(), value);
             }
         }
-
     }
 
     public static void main(String[] args) {

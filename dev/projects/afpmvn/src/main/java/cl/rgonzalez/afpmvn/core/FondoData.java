@@ -29,16 +29,16 @@ public class FondoData implements Serializable {
 
     public void put(Periodo periodo, Tipo tipo, Double value) {
         switch (tipo) {
-            case MENSUAL:
+            case RENTAB_MENSUAL:
                 this.mapMonth.put(periodo, value);
                 break;
-            case ACUM_DESDE_ENERO:
+            case RENTAB_DESDE_ENERO:
                 this.mapThisYear.put(periodo, value);
                 break;
-            case ACUM_ANHO_COMPLETO:
+            case RENTAB_ULTIMOS_12_MESES:
                 this.mapFullYear.put(periodo, value);
                 break;
-            case PROMEDIO_HISTORICO:
+            case PROMEDIO_ANUAL_DESDE_20020927:
                 this.mapAverageTotal.put(periodo, value);
                 break;
         }
@@ -46,13 +46,13 @@ public class FondoData implements Serializable {
 
     public Double get(Periodo periodo, Tipo tipo) {
         switch (tipo) {
-            case MENSUAL:
+            case RENTAB_MENSUAL:
                 return this.mapMonth.get(periodo);
-            case ACUM_DESDE_ENERO:
+            case RENTAB_DESDE_ENERO:
                 return this.mapThisYear.get(periodo);
-            case ACUM_ANHO_COMPLETO:
+            case RENTAB_ULTIMOS_12_MESES:
                 return this.mapFullYear.get(periodo);
-            case PROMEDIO_HISTORICO:
+            case PROMEDIO_ANUAL_DESDE_20020927:
                 return this.mapAverageTotal.get(periodo);
             default:
                 return null;
