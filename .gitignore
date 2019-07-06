@@ -7,3 +7,4 @@ pom.xml.versionsBackup
 pom.xml.next
 dev/projects/**/build
 dev/projects/**/nbproject/private
+/dev/projects/afpmvn/storage/

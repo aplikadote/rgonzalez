@@ -6,11 +6,9 @@
 package cl.rgonzalez.afpmvn.run;
 
 import cl.rgonzalez.afpmvn.core.Afp;
-import cl.rgonzalez.afpmvn.core.Fondo;
 import cl.rgonzalez.afpmvn.core.Database;
 import cl.rgonzalez.afpmvn.core.Simulador;
 import cl.rgonzalez.afpmvn.core.Storage;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -44,10 +42,17 @@ public class RunSimulation {
             Database db = storage.restore();
             Simulador sim = new Simulador(db);
 
-//            int year = 2006;
-//            int month = 0;
-//            double mensual = 30000;
-//
+            int year = 2010;
+            int month = 1;
+            double cotizacion = 30000;
+
+//            db.getAfps().forEach(System.out::println);
+            double bote = sim.simulate(cotizacion, "CAPITAL", "A", year, month);
+            System.out.println(bote);
+            
+            double bote2 = sim.simulate(cotizacion, 0.003591 ,year, month);
+            System.out.println(bote2);
+            
 //            double bote1 = sim.simulate(mensual, 0.000, year, month);
 //            System.out.println("bote1: " + bote1);
 //

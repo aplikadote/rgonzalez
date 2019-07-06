@@ -73,7 +73,11 @@ public class Database implements Serializable {
         return periodos;
     }
 
+    public Afp findAfp(String afpName) {
+        return this.nameToAfp.get(afpName);
+    }
     
-
-
+    public Fondo findFondo(String fondoName) {
+        return Fondo.valueOf(fondoName);
+    }
 }

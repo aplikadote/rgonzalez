@@ -14,6 +14,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Locale;
@@ -27,11 +29,14 @@ import org.json.JSONObject;
 public class CreateDatabase {
 
     private Database db;
-    private NumberFormat df;
+    private DecimalFormat df;
 
     public CreateDatabase() {
         this.db = new Database();
-        this.df = NumberFormat.getNumberInstance(new Locale("ES", "CL"));
+
+        DecimalFormatSymbols dfs = new DecimalFormatSymbols();
+        dfs.setDecimalSeparator(',');
+        this.df = new DecimalFormat("0.00%", dfs);
     }
 
     public void start() throws IOException, ParseException {

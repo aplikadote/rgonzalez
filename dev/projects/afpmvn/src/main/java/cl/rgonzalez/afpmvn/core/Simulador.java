@@ -20,35 +20,37 @@ public class Simulador {
         this.db = db;
     }
 
-    public double simulate(String afpName, String fondoName, int initYear, int initMonth, double cotizacion) {
+    public double simulate(double cotizacion, String afpName, String fondoName, int initYear, int initMonth ) {
+        Afp afp = db.findAfp(afpName);
+        Fondo fondo = db.findFondo(fondoName);
         double bote = 0;
         Periodo initPeriodo = db.getPeriodo(initYear, initMonth);
         NavigableSet<Periodo> set = db.getPeriodos().tailSet(initPeriodo, true);
         Iterator<Periodo> iterator = set.iterator();
         iterator.next();
-//        while (iterator.hasNext()) {
-//            Periodo periodo = iterator.next();
-//            double rate = db.get(afpName, fondoName, periodo, Tipo.MENSUAL);
-//            bote += cotizacion;
-//            bote += bote * rate;
-//        }
+        while (iterator.hasNext()) {
+            Periodo periodo = iterator.next();
+            Double rate = db.get(afp, fondo, periodo, Tipo.RENTAB_MENSUAL);
+            bote += cotizacion;
+            bote += bote * rate;
+        }
 
         return bote;
     }
 
-//    public double simulate(double cotizacion, double rate, int year, int month) {
-//        double bote = 0;
-//        Periodo date = getAfpDate(year, month);
-//        NavigableSet<Periodo> set = periodos.tailSet(date, true);
-//        Iterator<Periodo> iterator = set.iterator();
-//        iterator.next();
-//        while (iterator.hasNext()) {
-//            Periodo afpDate = iterator.next();
-//            bote += cotizacion;
-//            bote += bote * rate;
-//        }
-//        return bote;
-//
-//    }
+    public double simulate(double cotizacion, double rate, int year, int month) {
+        double bote = 0;
+        Periodo date = db.getPeriodo(year, month);
+        NavigableSet<Periodo> set = db.getPeriodos().tailSet(date, true);
+        Iterator<Periodo> iterator = set.iterator();
+        iterator.next();
+        while (iterator.hasNext()) {
+            iterator.next();
+            bote += cotizacion;
+            bote += bote * rate;
+        }
+        return bote;
+
+    }
 
 }
