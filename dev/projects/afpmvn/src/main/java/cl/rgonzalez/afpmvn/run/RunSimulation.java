@@ -5,34 +5,20 @@
  */
 package cl.rgonzalez.afpmvn.run;
 
-import cl.rgonzalez.afpmvn.core.Afp;
 import cl.rgonzalez.afpmvn.core.Database;
 import cl.rgonzalez.afpmvn.core.Simulador;
 import cl.rgonzalez.afpmvn.core.Storage;
-import java.util.List;
 
 /**
-BANSANDER
-=============================
-first: [2005 7]
-last : [2008 2]
- 
-SANTA MARIA
-=============================
-first: [2005 7]
-last : [2008 2]
- 
-CAPITAL
-=============================
-first: [2008 3]
-last : [2015 11]
-=============================
- 
-MODELO
-=============================
-first: [2010 8]
-last : [2015 11]
- 
+ * BANSANDER ============================= first: [2005 7] last : [2008 2]
+ *
+ * SANTA MARIA ============================= first: [2005 7] last : [2008 2]
+ *
+ * CAPITAL ============================= first: [2008 3] last : [2015 11]
+ * =============================
+ *
+ * MODELO ============================= first: [2010 8] last : [2015 11]
+ *
  */
 public class RunSimulation {
 
@@ -42,17 +28,19 @@ public class RunSimulation {
             Database db = storage.restore();
             Simulador sim = new Simulador(db);
 
-            int year = 2010;
+            int year = 2007;
             int month = 1;
             double cotizacion = 30000;
 
 //            db.getAfps().forEach(System.out::println);
-            double bote = sim.simulate(cotizacion, "CAPITAL", "A", year, month);
-            System.out.println(bote);
+            double bote = sim.simulate(cotizacion, "CUPRUM", "B", year, month);
+            System.out.println((int) bote);
+
+            System.out.println(" ------------------------- ");
             
-            double bote2 = sim.simulate(cotizacion, 0.003591 ,year, month);
-            System.out.println(bote2);
-            
+            double bote2 = sim.simulate(cotizacion, 0.0025, year, month);
+            System.out.println((int) bote2);
+
 //            double bote1 = sim.simulate(mensual, 0.000, year, month);
 //            System.out.println("bote1: " + bote1);
 //
@@ -82,7 +70,6 @@ public class RunSimulation {
 //                }
 //                System.out.println();
 //            }
-
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -94,4 +81,3 @@ public class RunSimulation {
     }
 
 }
-

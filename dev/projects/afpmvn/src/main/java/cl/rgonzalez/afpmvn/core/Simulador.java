@@ -20,19 +20,21 @@ public class Simulador {
         this.db = db;
     }
 
-    public double simulate(double cotizacion, String afpName, String fondoName, int initYear, int initMonth ) {
+    public double simulate(double cotizacion, String afpName, String fondoName, int initYear, int initMonth) {
         Afp afp = db.findAfp(afpName);
         Fondo fondo = db.findFondo(fondoName);
         double bote = 0;
         Periodo initPeriodo = db.getPeriodo(initYear, initMonth);
         NavigableSet<Periodo> set = db.getPeriodos().tailSet(initPeriodo, true);
         Iterator<Periodo> iterator = set.iterator();
-        iterator.next();
+//        iterator.next();
         while (iterator.hasNext()) {
             Periodo periodo = iterator.next();
             Double rate = db.get(afp, fondo, periodo, Tipo.RENTAB_MENSUAL);
             bote += cotizacion;
             bote += bote * rate;
+
+            System.out.format("%s %.4f %s\n", periodo, rate, (int) bote);
         }
 
         return bote;
@@ -43,11 +45,12 @@ public class Simulador {
         Periodo date = db.getPeriodo(year, month);
         NavigableSet<Periodo> set = db.getPeriodos().tailSet(date, true);
         Iterator<Periodo> iterator = set.iterator();
-        iterator.next();
+//        iterator.next();
         while (iterator.hasNext()) {
-            iterator.next();
+            Periodo periodo = iterator.next();
             bote += cotizacion;
             bote += bote * rate;
+            System.out.format("%s %.4f %s\n", periodo, rate, (int) bote);
         }
         return bote;
 
