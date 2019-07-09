@@ -1,3 +1,7 @@
+//
+// https://www.spensiones.cl/apps/rentabilidad/getRentabilidad.php?tiprent=FP&template=0
+//
+
 var fondos = ['A', 'B', 'C', 'D', 'E'];
 var columns = ['AFP', 'RENTAB_MENSUAL', 'RENTAB_DESDE_ENERO', 'RENTAB_ULTIMOS_12_MESES', 'PROMEDIO_ANUAL_DESDE_20020927'];
 
